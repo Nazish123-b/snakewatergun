@@ -1,40 +1,32 @@
-import random
+Absolutely! Here's a nice **description of the Snake-Water-Gun Game** that you can use in your code, project, or documentation:
 
-'''
-1 for snake
--1 for water 
-0 for gun
-'''
+---
 
-# Computer makes a random choice
-computer = random.choice([1, -1, 0])
+### 🎮 **Snake-Water-Gun Game – Description:**
 
-# User input
-youstr = input("Enter your choice (s/snake for snake, w/water for water, g/gun for gun): ").lower().strip()
+**Snake-Water-Gun** is a simple and fun hand game, similar to **Rock-Paper-Scissors**, played between two players—**you vs the computer**.
 
-# Mapping dictionaries
-youDict = {
-    "s": 1,
-    "snake": 1,
-    "w": -1,
-    "water": -1,
-    "g": 0,
-    "gun": 0,
-}
-reverseDict = {1: "snake", -1: "water", 0: "gun"}
+Each player chooses one of the three options:
 
-# Convert user input to corresponding value
-if youstr not in youDict:
-    print("Invalid input! Please choose from s, w, g or their full forms.")
-else:
-    you = youDict[youstr]
-    print(f"You chose: {reverseDict[you]}")
-    print(f"Computer chose: {reverseDict[computer]}")
+- 🐍 **Snake**
+- 💧 **Water**
+- 🔫 **Gun**
 
-    # Determine winner
-    if computer == you:
-        print("It's a tie!")
-    elif (computer == -1 and you == 1) or (computer == 1 and you == 0) or (computer == 0 and you == -1):
-        print("You Win!")
-    else:
-        print("You Lose!")
+The winner is decided based on the following rules:
+
+| Choice | Wins Against | Loses To |
+|--------|----------------|-----------|
+| Snake | Water (Snake drinks Water) | Gun (Snake is shot by Gun) |
+| Water | Gun (Water damages Gun) | Snake (Snake drinks Water) |
+| Gun   | Snake (Gun shoots Snake) | Water (Gun is damaged by Water) |
+
+### 💡 **Objective:**
+Choose your move wisely and try to beat the computer!  
+The game involves **luck, logic, and a bit of fun competition**.
+
+---
+
+### ✨ Example Gameplay:
+- You choose **Snake**, Computer chooses **Water** → **You Win!**
+- You choose **Gun**, Computer chooses **Water** → **You Lose!**
+- Both choose **Gun** → **It's a Tie!**
